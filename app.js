@@ -12,9 +12,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get("/api/user", (req, res) => {
-  res.status(200).json({username: "ME"});
-})
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + 'public/index.html'));
